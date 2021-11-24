@@ -1,8 +1,8 @@
 import React, {useState, useEffect} from 'react';
 import houses from '../../Mocks/houses.json'
-import './home.scss';
+import './contact.scss';
 
-function Home() {
+function Contact() {
   const [error, setError] = useState(null);
   const [isLoaded, setIsLoaded] = useState(false);
   const [items, setItems] = useState([]);
@@ -34,9 +34,9 @@ function Home() {
     return <div>Loading...</div>;
   } else {
     return (
-      <div>this is home</div>
+      <div>this is contact</div>
     );
   }
 }
 
-export default Home;
+export default Contact;
