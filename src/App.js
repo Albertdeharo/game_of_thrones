@@ -10,9 +10,6 @@ import Home from './components/Home/Home';
 import Houses from './components/Houses/Houses';
 import House from './components/House/House';
 import Contact from './components/Contact/Contact';
-import houses from './Mocks/houses.json';
-
-console.log(houses);
 
 function App() {
   return (

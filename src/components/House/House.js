@@ -8,17 +8,13 @@ function House() {
   const [error, setError] = useState(null);
   const [isLoaded, setIsLoaded] = useState(false);
   const [house, setHouse] = useState([]);
-  // console.log(house.swornMembers.length);
-  // const isArray = () => {
-  //   if ( house.swornMembers.length) {
-  //     console.log('si es array i hi han npc');
-  //   } else {
-  //     console.log('esta buit')
-  //   }
-  // }
+  const [cadetBranchesFormated, setCadetBranchesFormated] = useState(house.cadetBranches);
+  const [swornMembersFormated, setswornMembersFormated] = useState(house.swornMembers);
+  const [seatsFormated, setSeatsFormated] = useState(house.seats);
+  const [titlesFormated, setTitlesFormated] = useState(house.titles);
+  const [ancestralWeaponsFormated, setAncestralWeaponsFormated] = useState(house.ancestralWeapons);
   // Note: the empty deps array [] means
   // this useEffect will run once
-  // similar to componentDidMount()
   useEffect(() => {
     fetch(`https://anapioficeandfire.com/api/houses/${id}`)
       .then(res => res.json())
@@ -26,7 +22,20 @@ function House() {
         (result) => {
           console.log(result);
           setIsLoaded(true);
+          // Delete empty arrays
+          if (result.swornMembers.length === 0 ) {delete result.swornMembers;}
+          if (result.cadetBranches.length === 0 ) {delete result.cadetBranches;}
+          // Delete empty 'string' on array
+          if (result.seats[0].length === 0 ) {delete result.seats;}
+          if (result.titles[0].length === 0 ) {delete result.titles}
+          if (result.ancestralWeapons[0].length === 0 ) {delete result.ancestralWeapons}
+          // Set data on diferent arrays
           setHouse(result);
+          setCadetBranchesFormated(result.cadetBranches)
+          setswornMembersFormated(result.swornMembers)
+          setSeatsFormated(result.seats)
+          setTitlesFormated(result.titles)
+          setAncestralWeaponsFormated(result.ancestralWeapons)
         },
         // Nota: es importante manejar errores aquí y no en 
         // un bloque catch() para que no interceptemos errores
@@ -36,76 +45,96 @@ function House() {
           setError(error);
         }
       )
-      // isArray();
-  }, [id])
-
+  }, [id, isLoaded])
+  
   if (error) {
     return <div>Error: {error.message}</div>;
   } else if (!isLoaded) {
     return <div>Loading...</div>;
   } else {
     return (
-      <div>
-        <div className="title">Name</div>
-        {house.name}
-        <br />
-        <div className="title">Ancestral Weapons</div>
-        {house.ancestralWeapons}
-        <br />
-        <div className="title">cadetBranches</div>
-        {house.cadetBranches}
-        {/* {house.cadetBranches.lenght > 0 ?
-          <Fragment>
-            <div className="title">cadetBranches</div>
-            <div className="content">{house.cadetBranches}</div>
-          </Fragment>
-        :''} */}
-        <br />
-        <div className="title">coatOfArms</div>
-        {house.coatOfArms}
-        <br />
-        <div className="title">founded</div>
-        {house.founded}
-        <br />
-        <div className="title">founder</div>
-        {house.founder}
-        <br />
+      <div className="house-content container-fluid">
+        {house.name ?
+          <div className="house-attribute">
+            <div className="title">name</div>
+            <div className="content">{house.name}</div>
+          </div>
+        :''}
+        {ancestralWeaponsFormated ?
+            <div className="house-attribute">
+              <div className="title">ancestralWeapons</div>
+              {ancestralWeaponsFormated.map((ancestralWeapon) => (
+                <div className="content">{ancestralWeapon}</div>
+              ))}
+            </div>
+        :''}
+        {cadetBranchesFormated ?
+            <div className="house-attribute">
+              <div className="title">cadetBranches</div>
+              {cadetBranchesFormated.map((cadetBranch) => (
+                <div className="content">{cadetBranch}</div>
+              ))}
+            </div>
+        :''}
+        {house.coatOfArms ?
+          <div className="house-attribute">
+            <div className="title">coatOfArms</div>
+            <div className="content">{house.coatOfArms}</div>
+          </div>
+        :''}
+        {house.founded ?
+          <div className="house-attribute">
+            <div className="title">founded</div>
+            <div className="content">{house.founded}</div>
+          </div>
+        :''}
+        {house.founder ?
+          <div className="house-attribute">
+            <div className="title">founder</div>
+            <div className="content">{house.founder}</div>
+          </div>
+        :''}
         {house.overlord ?
-          <Fragment>
+          <div className="house-attribute">
             <div className="title">overlord</div>
             <div className="content">{house.overlord}</div>
-          </Fragment>
+          </div>
         :''}
-        {/* <div className="title">overlord</div>
-        {house.overlord} */}
-        <br />
-        <div className="title">region</div>
-        {house.region}
-        <br />
-        <div className="title">seats</div>
-        {house.seats}
-        <br />
-        {house.swornMembers ?
-          <Fragment>
+        {house.region ?
+          <div className="house-attribute">
+            <div className="title">region</div>
+            <div className="content">{house.region}</div>
+          </div>
+        :''}
+        {seatsFormated ?
+          <div className="house-attribute">
+            <div className="title">seats</div>
+            {seatsFormated.map((seat) => (
+              <div className="content">{seat}</div>
+            ))}
+          </div>
+        :''}
+        {swornMembersFormated ?
+          <div className="house-attribute">
             <div className="title">swornMembers</div>
-            <div className="content">{house.swornMembers}</div>
-          </Fragment>
+            {swornMembersFormated.map((swornMember) => (
+              <div className="content">{swornMember}</div>
+            ))}
+          </div>
         :''}
-        {/* {house.swornMembers.isArray(array) && array.length} */}
-        <br />
-        {house.titles ?
-          <Fragment>
+        {titlesFormated ?
+          <div className="house-attribute">
             <div className="title">titles</div>
-            <div className="content">{house.titles}</div>
-          </Fragment>
+            {titlesFormated.map((title) => (
+              <div className="content">{title}</div>
+            ))}
+          </div>
         :''}
-        <br />
-       
         {house.words ?
-          <Fragment>
+          <div className="house-attribute">
             <div className="title">words</div>
             <div className="content">{house.words}</div>
-          </Fragment>
+          </div>
         :''}
       </div>
     );

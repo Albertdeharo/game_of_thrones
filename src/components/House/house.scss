@@ -1,7 +1,33 @@
-.App {
-  text-align: start;
+// .house-content {
+//   display: flex;
+//   flex-wrap: wrap;
+// }
+
+.house-attribute {
 }
 
-.App-link {
-  color: red;
+.title {
+  font-family: "Palatino Linotype", "Book Antiqua", Palatino, serif;
+  font-size: 20px;
+  letter-spacing: 3px;
+  word-spacing: 4px;
+  color: #000000;
+  font-weight: bold;
+  text-decoration: none;
+  font-style: normal;
+  font-variant: small-caps;
+  text-transform: none;
+}
+
+.content {
+  font-family: "Palatino Linotype", "Book Antiqua", Palatino, serif;
+  font-size: 12px;
+  letter-spacing: 3px;
+  word-spacing: 4px;
+  color: #111;
+  font-weight: normal;
+  text-decoration: none;
+  font-style: normal;
+  font-variant: small-caps;
+  text-transform: none;
 }
