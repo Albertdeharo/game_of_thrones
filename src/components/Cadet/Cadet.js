@@ -21,7 +21,7 @@ function Cadet(props:any) {
           setError(error);
         }
       )
-  }, [isLoaded, props, data])
+  }, [isLoaded])
   if (error) {
     return <div>Error: {error.message}</div>;
   } else if (!isLoaded) {

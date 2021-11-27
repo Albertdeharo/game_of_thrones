@@ -1,3 +1,16 @@
 .swornMember-content{
   background-color: green;
+  display: flex;
+  align-items: stretch;
+  .card {
+    width: 15rem;
+    padding: 1rem;
+    margin: 1rem;
+  }
+  .card-title{
+    display: flex;
+    & svg{
+      margin-left: 1rem;
+    }
+  }
 }

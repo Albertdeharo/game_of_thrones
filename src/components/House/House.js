@@ -5,6 +5,22 @@ import Cadet from './../Cadet/Cadet'
 import SwornMember from '../SwornMember/SwornMember'
 import Founder from '../Founder/Founder'
 import Overlord from '../Overlord/Overlord'
+
+import { FaUser } from 'react-icons/fa';
+import { MdCardMembership } from 'react-icons/md';
+import { MdFoundation } from 'react-icons/md';
+import { MdEventSeat } from 'react-icons/md';
+import { GrLocationPin } from 'react-icons/gr';
+import { GiOverlordHelm } from 'react-icons/gi';
+import { GiSwordsEmblem } from 'react-icons/gi';
+import { GiSwordsPower } from 'react-icons/gi';
+import { GiSwordman } from 'react-icons/gi';
+import { GiSwordwoman } from 'react-icons/gi';
+import { GiLabCoat } from 'react-icons/gi';
+import { GiSwordBrandish } from 'react-icons/gi';
+import { SiElement } from 'react-icons/si';
+
+
 import './house.scss';
 
 function House() {
@@ -56,16 +72,16 @@ function House() {
     return <div>Loading...</div>;
   } else {
     return (
-      <div className="house-content container-fluid">
+      <div className="house-content container">
         {house.name ?
           <div className="house-attribute">
-            <div className="title">name</div>
+            <div className="title">name <GiSwordsEmblem/> </div>
             <div className="content">{house.name}</div>
           </div>
         :''}
         {ancestralWeaponsFormated ?
             <div className="house-attribute">
-              <div className="title">ancestralWeapons</div>
+              <div className="title">ancestralWeapons <SiElement/> </div>
               {ancestralWeaponsFormated.map((ancestralWeapon) => (
                 <div className="content">{ancestralWeapon}</div>
               ))}
@@ -73,50 +89,49 @@ function House() {
         :''}
         {cadetBranchesFormated ?
             <div className="house-attribute">
-              <div className="title">cadetBranches</div>
+              <div className="title">cadetBranches <GiSwordBrandish/></div>
               {cadetBranchesFormated.map((cadetBranch) => (
                 <Fragment>
                   <Cadet data={cadetBranch}/>
-                  {/* <div className="content">{cadetBranch}</div> */}
                 </Fragment>
               ))}
             </div>
         :''}
         {house.coatOfArms ?
           <div className="house-attribute">
-            <div className="title">coatOfArms</div>
+            <div className="title">coatOfArms <GiLabCoat/></div>
             <div className="content">{house.coatOfArms}</div>
           </div>
         :''}
         {house.founded ?
           <div className="house-attribute">
-            <div className="title">founded</div>
+            <div className="title">founded <MdFoundation/></div>
             <div className="content">{house.founded}</div>
           </div>
         :''}
         {house.founder ?
           <div className="house-attribute">
-            <div className="title">founder</div>
+            <div className="title">founder <FaUser/></div>
             {/* <div className="content">{house.founder}</div> */}
             <Founder data={house.founder}/>
           </div>
         :''}
         {house.overlord ?
           <div className="house-attribute">
-            <div className="title">overlord</div>
+            <div className="title">overlord <GiOverlordHelm/> </div>
             {/* <div className="content">{house.overlord}</div> */}
             <Overlord data={house.overlord}/>
           </div>
         :''}
         {house.region ?
           <div className="house-attribute">
-            <div className="title">region</div>
+            <div className="title">region<GrLocationPin/></div>
             <div className="content">{house.region}</div>
           </div>
         :''}
         {seatsFormated ?
           <div className="house-attribute">
-            <div className="title">seats</div>
+            <div className="title">seats <MdEventSeat/></div>
             {seatsFormated.map((seat) => (
               <div className="content">{seat}</div>
             ))}
@@ -124,17 +139,19 @@ function House() {
         :''}
         {swornMembersFormated ?
           <div className="house-attribute">
-            <div className="title">swornMembers</div>
-            {swornMembersFormated.map((swornMember) => (
-              <Fragment>
+            <div className="title">
+              swornMembers <MdCardMembership/>
+            </div>
+            <div className="swornMember-container">
+              {swornMembersFormated.map((swornMember) => (
                 <SwornMember data={swornMember}/>
-              </Fragment>
-            ))}
+                ))}
+              </div>
           </div>
         :''}
         {titlesFormated ?
           <div className="house-attribute">
-            <div className="title">titles</div>
+            <div className="title">titles <GiSwordBrandish/></div>
             {titlesFormated.map((title) => (
               <div className="content">{title}</div>
             ))}
@@ -142,7 +159,7 @@ function House() {
         :''}
         {house.words ?
           <div className="house-attribute">
-            <div className="title">words</div>
+            <div className="title">words <GiSwordsPower/></div>
             <div className="content">{house.words}</div>
           </div>
         :''}

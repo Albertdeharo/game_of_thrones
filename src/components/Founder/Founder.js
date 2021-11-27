@@ -21,7 +21,7 @@ function Founder(props:any) {
           setError(error);
         }
       )
-  }, [isLoaded, props])
+  }, [isLoaded])
   if (error) {
     return <div>Error: {error.message}</div>;
   } else if (!isLoaded) {

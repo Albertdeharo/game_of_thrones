@@ -1,8 +1,9 @@
 import React, {useState, useEffect} from 'react';
+import { GrUser } from 'react-icons/gr';
 
 import './swornMember.scss';
 
-function SwornMembers(props:any) {
+function SwornMember(props:any) {
   const [error, setError] = useState(null);
   const [isLoaded, setIsLoaded] = useState(false);
   const [data, setData]= useState([]);
@@ -21,8 +22,8 @@ function SwornMembers(props:any) {
           setError(error);
         }
       )
-  }, [isLoaded, props, data])
-
+  }, [isLoaded])
+  console.log(data);
   if (error) {
     return <div>Error: {error.message}</div>;
   } else if (!isLoaded) {
@@ -30,10 +31,24 @@ function SwornMembers(props:any) {
   } else {
     return (
       <div className="swornMember-content">
-        <div>{data.name}</div>
+        {/* <div>{data.name}</div> */}
+        <div className="card">
+          <div className="card-body">
+            <h5 className="card-title">{data.name}<GrUser/></h5>
+            <h6 className="card-subtitle mb-2 text-muted">{data.culture}</h6>
+            <h6 className="card-subtitle mb-2 text-muted">{data.gender}</h6>
+            <h6 className="card-subtitle mb-2 text-muted">{data.born}</h6>
+            <h6 className="card-subtitle mb-2 text-muted">{data.died}</h6>
+            <h6 className="card-subtitle mb-2 text-muted">{data.father}</h6>
+            <h6 className="card-subtitle mb-2 text-muted">{data.mother}</h6>
+            {/* <p className="card-text"></p> */}
+            {/* <a href="www.google.com" className="card-link">Card link</a> */}
+            {/* <a href="www.google.com" className="card-link">Another link</a> */}
+          </div>
+        </div>
       </div>
     );
   }
 }
 
-export default SwornMembers;
+export default SwornMember;
