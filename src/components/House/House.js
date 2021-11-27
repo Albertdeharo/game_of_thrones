@@ -74,35 +74,38 @@ function House() {
     return (
       <div className="house-content container">
         {house.name ?
-          <div className="house-attribute">
-            <div className="title">name <GiSwordsEmblem/> </div>
-            <div className="content">{house.name}</div>
+          <div className="col-12">
+            <div className="house-attribute">
+              <div className="top-title">{house.name} <GiSwordsEmblem/></div>
+            </div>
           </div>
         :''}
-        {ancestralWeaponsFormated ?
-            <div className="house-attribute">
-              <div className="title">ancestralWeapons <SiElement/> </div>
-              {ancestralWeaponsFormated.map((ancestralWeapon) => (
-                <div className="content">{ancestralWeapon}</div>
-              ))}
+        <div className="row">
+          {ancestralWeaponsFormated ?
+              <div className="house-attribute col-4">
+                <div className="title">ancestralWeapons <SiElement/> </div>
+                {ancestralWeaponsFormated.map((ancestralWeapon) => (
+                  <div className="content">{ancestralWeapon}</div>
+                ))}
+              </div>
+          :''}
+          {cadetBranchesFormated ?
+              <div className="house-attribute col-4">
+                <div className="title">cadetBranches <GiSwordBrandish/></div>
+                {cadetBranchesFormated.map((cadetBranch) => (
+                  <Fragment>
+                    <Cadet data={cadetBranch}/>
+                  </Fragment>
+                ))}
+              </div>
+          :''}
+          {house.coatOfArms ?
+            <div className="house-attribute col-4">
+              <div className="title">coatOfArms <GiLabCoat/></div>
+              <div className="content">{house.coatOfArms}</div>
             </div>
-        :''}
-        {cadetBranchesFormated ?
-            <div className="house-attribute">
-              <div className="title">cadetBranches <GiSwordBrandish/></div>
-              {cadetBranchesFormated.map((cadetBranch) => (
-                <Fragment>
-                  <Cadet data={cadetBranch}/>
-                </Fragment>
-              ))}
-            </div>
-        :''}
-        {house.coatOfArms ?
-          <div className="house-attribute">
-            <div className="title">coatOfArms <GiLabCoat/></div>
-            <div className="content">{house.coatOfArms}</div>
-          </div>
-        :''}
+          :''}
+        </div>
         {house.founded ?
           <div className="house-attribute">
             <div className="title">founded <MdFoundation/></div>

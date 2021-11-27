@@ -10,11 +10,12 @@ import Home from './components/Home/Home';
 import Houses from './components/Houses/Houses';
 import House from './components/House/House';
 import Contact from './components/Contact/Contact';
+import './app.scss';
 
 function App() {
   return (
     <Router>
-      <div>
+      <div className="app">
         <nav>
           <ul>
             <li>
