@@ -1,6 +1,10 @@
 import React, {useState, useEffect, Fragment} from 'react';
 import { useParams } from 'react-router';
 
+import Cadet from './../Cadet/Cadet'
+import SwornMember from '../SwornMember/SwornMember'
+import Founder from '../Founder/Founder'
+import Overlord from '../Overlord/Overlord'
 import './house.scss';
 
 function House() {
@@ -20,7 +24,6 @@ function House() {
       .then(res => res.json())
       .then(
         (result) => {
-          console.log(result);
           setIsLoaded(true);
           // Delete empty arrays
           if (result.swornMembers.length === 0 ) {delete result.swornMembers;}
@@ -45,7 +48,7 @@ function House() {
           setError(error);
         }
       )
-  }, [id, isLoaded])
+  }, [id, isLoaded, house])
   
   if (error) {
     return <div>Error: {error.message}</div>;
@@ -72,7 +75,10 @@ function House() {
             <div className="house-attribute">
               <div className="title">cadetBranches</div>
               {cadetBranchesFormated.map((cadetBranch) => (
-                <div className="content">{cadetBranch}</div>
+                <Fragment>
+                  <Cadet data={cadetBranch}/>
+                  {/* <div className="content">{cadetBranch}</div> */}
+                </Fragment>
               ))}
             </div>
         :''}
@@ -91,13 +97,15 @@ function House() {
         {house.founder ?
           <div className="house-attribute">
             <div className="title">founder</div>
-            <div className="content">{house.founder}</div>
+            {/* <div className="content">{house.founder}</div> */}
+            <Founder data={house.founder}/>
           </div>
         :''}
         {house.overlord ?
           <div className="house-attribute">
             <div className="title">overlord</div>
-            <div className="content">{house.overlord}</div>
+            {/* <div className="content">{house.overlord}</div> */}
+            <Overlord data={house.overlord}/>
           </div>
         :''}
         {house.region ?
@@ -118,7 +126,9 @@ function House() {
           <div className="house-attribute">
             <div className="title">swornMembers</div>
             {swornMembersFormated.map((swornMember) => (
-              <div className="content">{swornMember}</div>
+              <Fragment>
+                <SwornMember data={swornMember}/>
+              </Fragment>
             ))}
           </div>
         :''}

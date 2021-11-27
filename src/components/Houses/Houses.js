@@ -26,13 +26,7 @@ function Houses() {
           setError(error);
         }
       )
-      // houseID();
   }, [])
-  // const houseID = () =>{
-  //   houses.map(item => (
-  //     console.log(item.url.split('/').pop())
-  //   ));
-  // }
   if (error) {
     return <div>Error: {error.message}</div>;
   } else if (!isLoaded) {
