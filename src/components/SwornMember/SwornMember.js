@@ -31,7 +31,6 @@ function SwornMember(props:any) {
   } else {
     return (
       <div className="swornMember-content">
-        {/* <div>{data.name}</div> */}
         <div className="card">
           <div className="card-body">
             <h5 className="card-title">{data.name}<GrUser/></h5>
@@ -41,9 +40,6 @@ function SwornMember(props:any) {
             <h6 className="card-subtitle mb-2 text-muted">{data.died}</h6>
             <h6 className="card-subtitle mb-2 text-muted">{data.father}</h6>
             <h6 className="card-subtitle mb-2 text-muted">{data.mother}</h6>
-            {/* <p className="card-text"></p> */}
-            {/* <a href="www.google.com" className="card-link">Card link</a> */}
-            {/* <a href="www.google.com" className="card-link">Another link</a> */}
           </div>
         </div>
       </div>

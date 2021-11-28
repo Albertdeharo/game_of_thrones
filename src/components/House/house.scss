@@ -4,6 +4,28 @@
   align-items: stretch;
 }
 
+.house-attribute{
+  display: flex;
+}
+
+.container-info{
+  display: flex;
+  flex-wrap: wrap;
+  align-items: stretch;
+}
+
+.card {
+  width: 30rem;
+  padding: 1rem;
+  margin: 1rem;
+}
+.card-title{
+  display: flex;
+  & svg{
+    margin-left: 1rem;
+  }
+}
+
 .title {
   font-family: "Palatino Linotype", "Book Antiqua", Palatino, serif;
   font-size: 20px;

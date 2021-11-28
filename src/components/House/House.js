@@ -80,68 +80,141 @@ function House() {
             </div>
           </div>
         :''}
-        <div className="row">
-          {ancestralWeaponsFormated ?
-              <div className="house-attribute col-4">
-                <div className="title">ancestralWeapons <SiElement/> </div>
-                {ancestralWeaponsFormated.map((ancestralWeapon) => (
-                  <div className="content">{ancestralWeapon}</div>
-                ))}
+        <div className="container-info">
+        {ancestralWeaponsFormated ?
+              <div className="house-attribute">
+                <div className="card">
+                  <div className="card-body">
+                    <h5 className="card-title">ancestralWeapons <SiElement/></h5>
+                    <h6 className="card-subtitle mb-2 text-muted">
+                    {ancestralWeaponsFormated.map((ancestralWeapon) => (
+                      <div className="content">{ancestralWeapon}</div>
+                    ))}
+                    </h6>
+                  </div>
+                </div>
               </div>
           :''}
           {cadetBranchesFormated ?
-              <div className="house-attribute col-4">
-                <div className="title">cadetBranches <GiSwordBrandish/></div>
-                {cadetBranchesFormated.map((cadetBranch) => (
-                  <Fragment>
-                    <Cadet data={cadetBranch}/>
-                  </Fragment>
-                ))}
+              <div className="house-attribute">
+                <div className="card">
+                  <div className="card-body">
+                    <h5 className="card-title">cadetBranches <GiSwordBrandish/></h5>
+                    <h6 className="card-subtitle mb-2 text-muted">
+                    {cadetBranchesFormated.map((cadetBranch) => (
+                      <Fragment>
+                        <Cadet data={cadetBranch}/>
+                      </Fragment>
+                    ))}
+                    </h6>
+                  </div>
+                </div>
               </div>
           :''}
           {house.coatOfArms ?
-            <div className="house-attribute col-4">
-              <div className="title">coatOfArms <GiLabCoat/></div>
-              <div className="content">{house.coatOfArms}</div>
+            <div className="house-attribute">
+              <div className="card">
+                  <div className="card-body">
+                    <h5 className="card-title">coatOfArms <GiLabCoat/></h5>
+                    <h6 className="card-subtitle mb-2 text-muted">
+                      <div className="content">{house.coatOfArms}</div>
+                    </h6>
+                  </div>
+                </div>
             </div>
           :''}
-        </div>
         {house.founded ?
           <div className="house-attribute">
-            <div className="title">founded <MdFoundation/></div>
-            <div className="content">{house.founded}</div>
+             <div className="card">
+                <div className="card-body">
+                  <h5 className="card-title">founded <MdFoundation/></h5>
+                  <h6 className="card-subtitle mb-2 text-muted">
+                    <div className="content">{house.founded}</div>
+                  </h6>
+                </div>
+              </div>
           </div>
         :''}
+        
         {house.founder ?
           <div className="house-attribute">
-            <div className="title">founder <FaUser/></div>
-            {/* <div className="content">{house.founder}</div> */}
-            <Founder data={house.founder}/>
+            <div className="card">
+              <div className="card-body">
+                <h5 className="card-title">founder <FaUser/></h5>
+                <h6 className="card-subtitle mb-2 text-muted">
+                  <Founder data={house.founder}/>
+                </h6>
+              </div>
+            </div>
           </div>
         :''}
         {house.overlord ?
           <div className="house-attribute">
-            <div className="title">overlord <GiOverlordHelm/> </div>
-            {/* <div className="content">{house.overlord}</div> */}
-            <Overlord data={house.overlord}/>
+            <div className="card">
+              <div className="card-body">
+                <h5 className="card-title">overlord <GiOverlordHelm/></h5>
+                <h6 className="card-subtitle mb-2 text-muted">
+                  <Overlord data={house.overlord}/>
+                </h6>
+              </div>
+            </div>
           </div>
         :''}
         {house.region ?
           <div className="house-attribute">
-            <div className="title">region<GrLocationPin/></div>
-            <div className="content">{house.region}</div>
+            <div className="card">
+              <div className="card-body">
+                <h5 className="card-title">region<GrLocationPin/></h5>
+                <h6 className="card-subtitle mb-2 text-muted">
+                  <div className="content">{house.region}</div>
+                </h6>
+              </div>
+            </div>
           </div>
         :''}
         {seatsFormated ?
           <div className="house-attribute">
-            <div className="title">seats <MdEventSeat/></div>
-            {seatsFormated.map((seat) => (
-              <div className="content">{seat}</div>
-            ))}
+            <div className="card">
+              <div className="card-body">
+                <h5 className="card-title">seats <MdEventSeat/></h5>
+                <h6 className="card-subtitle mb-2 text-muted">
+                {seatsFormated.map((seat) => (
+                  <div className="content">{seat}</div>
+                ))}
+                </h6>
+              </div>
+            </div>
           </div>
         :''}
-        {swornMembersFormated ?
+        {titlesFormated ?
           <div className="house-attribute">
+            <div className="card">
+              <div className="card-body">
+                <h5 className="card-title">titles <GiSwordBrandish/></h5>
+                <h6 className="card-subtitle mb-2 text-muted">
+                {titlesFormated.map((title) => (
+                  <div className="content">{title}</div>
+                ))}
+                </h6>
+              </div>
+            </div>
+          </div>
+        :''}
+        {house.words ?
+          <div className="house-attribute">
+            <div className="card">
+              <div className="card-body">
+                <h5 className="card-title">words <GiSwordsPower/></h5>
+                <h6 className="card-subtitle mb-2 text-muted">
+                  <div className="content">{house.words}</div>
+                </h6>
+              </div>
+            </div>
+          </div>
+        :''}
+        </div>
+        {swornMembersFormated ?
+          <div className="house-members">
             <div className="title">
               swornMembers <MdCardMembership/>
             </div>
@@ -150,20 +223,6 @@ function House() {
                 <SwornMember data={swornMember}/>
                 ))}
               </div>
-          </div>
-        :''}
-        {titlesFormated ?
-          <div className="house-attribute">
-            <div className="title">titles <GiSwordBrandish/></div>
-            {titlesFormated.map((title) => (
-              <div className="content">{title}</div>
-            ))}
-          </div>
-        :''}
-        {house.words ?
-          <div className="house-attribute">
-            <div className="title">words <GiSwordsPower/></div>
-            <div className="content">{house.words}</div>
           </div>
         :''}
       </div>
