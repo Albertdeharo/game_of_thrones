@@ -1,6 +1,9 @@
 import React, {useState, useEffect} from 'react';
 import { GrUser } from 'react-icons/gr';
-
+import { GiSwordman } from 'react-icons/gi';
+import { GiSwordwoman } from 'react-icons/gi';
+import { GiNewBorn } from 'react-icons/gi';
+import { FaBookDead } from 'react-icons/fa';
 import './swornMember.scss';
 
 function SwornMember(props:any) {
@@ -8,7 +11,6 @@ function SwornMember(props:any) {
   const [isLoaded, setIsLoaded] = useState(false);
   const [data, setData]= useState([]);
 
-  // this useEffect will run once
   useEffect(() => {
     fetch(props.data)
       .then(res => res.json())
@@ -22,7 +24,7 @@ function SwornMember(props:any) {
           setError(error);
         }
       )
-  }, [isLoaded])
+  }, [isLoaded, data, props.data])
   console.log(data);
   if (error) {
     return <div>Error: {error.message}</div>;
@@ -34,12 +36,27 @@ function SwornMember(props:any) {
         <div className="card">
           <div className="card-body">
             <h5 className="card-title">{data.name}<GrUser/></h5>
-            <h6 className="card-subtitle mb-2 text-muted">{data.culture}</h6>
-            <h6 className="card-subtitle mb-2 text-muted">{data.gender}</h6>
-            <h6 className="card-subtitle mb-2 text-muted">{data.born}</h6>
-            <h6 className="card-subtitle mb-2 text-muted">{data.died}</h6>
-            <h6 className="card-subtitle mb-2 text-muted">{data.father}</h6>
-            <h6 className="card-subtitle mb-2 text-muted">{data.mother}</h6>
+            <h6 className="card-subtitle mb-2 text-muted">
+              {data.culture}
+            </h6>
+            <h6 className="card-subtitle mb-2 text-muted">
+              {data.gender}
+              {data.gender == 'Male' ? <GiSwordman/>:<GiSwordwoman/>}
+            </h6>
+            <h6 className="card-subtitle mb-2 text-muted">
+              {data.born ? <GiNewBorn/>:''}
+              {data.born}
+            </h6>
+            <h6 className="card-subtitle mb-2 text-muted">
+              {data.died ? <FaBookDead/>:''}
+              {data.died}
+            </h6>
+            <h6 className="card-subtitle mb-2 text-muted">
+              {data.father}
+            </h6>
+            <h6 className="card-subtitle mb-2 text-muted">
+              {data.mother}
+            </h6>
           </div>
         </div>
       </div>

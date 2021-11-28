@@ -14,8 +14,6 @@ import { GrLocationPin } from 'react-icons/gr';
 import { GiOverlordHelm } from 'react-icons/gi';
 import { GiSwordsEmblem } from 'react-icons/gi';
 import { GiSwordsPower } from 'react-icons/gi';
-import { GiSwordman } from 'react-icons/gi';
-import { GiSwordwoman } from 'react-icons/gi';
 import { GiLabCoat } from 'react-icons/gi';
 import { GiSwordBrandish } from 'react-icons/gi';
 import { SiElement } from 'react-icons/si';
