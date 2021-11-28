@@ -73,12 +73,10 @@ function House() {
       <div className="house-content container">
         {house.name ?
           <div className="col-12">
-            <div className="house-attribute">
-              <div className="top-title">{house.name} <GiSwordsEmblem/></div>
-            </div>
+            <div className="top-title">{house.name} <GiSwordsEmblem/></div>
           </div>
         :''}
-        <div className="container-info">
+        <div className="house-info">
         {ancestralWeaponsFormated ?
               <div className="house-attribute">
                 <div className="card">

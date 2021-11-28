@@ -6,6 +6,7 @@ import {
   Link
 } from "react-router-dom";
 
+import Navbar from './components/Navbar/Navbar';
 import Home from './components/Home/Home';
 import Houses from './components/Houses/Houses';
 import House from './components/House/House';
@@ -16,7 +17,8 @@ function App() {
   return (
     <Router>
       <div className="app">
-        <nav>
+        <Navbar/>
+        {/* <nav>
           <ul>
             <li>
               <Link to="/">home</Link>
@@ -28,7 +30,7 @@ function App() {
               <Link to="/contact">Contact</Link>
             </li>
           </ul>
-        </nav>
+        </nav> */}
 
         {/* A <Switch> looks through its children <Route>s and
             renders the first one that matches the current URL. */}

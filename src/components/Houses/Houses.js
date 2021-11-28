@@ -33,7 +33,8 @@ function Houses() {
     return <div>Loading...</div>;
   } else {
     return (
-      <ul>
+      <div className="container-fluid d-flex">
+        <ul>
         {houses.map(item => (
           <li key={item.url}>
             {/* {item.name} <br /> {item.url} */}
@@ -43,6 +44,7 @@ function Houses() {
           </li>
         ))}
       </ul>
+      </div>
     );
   }
 }

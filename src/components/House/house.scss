@@ -1,63 +1,82 @@
-.swornMember-container{
-  display: flex;
-  flex-wrap: wrap;
-  align-items: stretch;
-}
-
-.house-attribute{
-  display: flex;
-}
-
-.container-info{
-  display: flex;
-  flex-wrap: wrap;
-  align-items: stretch;
-}
-
-.card {
-  width: 30rem;
-  padding: 1rem;
-  margin: 1rem;
-}
-.card-title{
-  display: flex;
-  & svg{
-    margin-left: 1rem;
-  }
-}
-
-.title {
-  font-family: "Palatino Linotype", "Book Antiqua", Palatino, serif;
-  font-size: 20px;
-  letter-spacing: 3px;
-  word-spacing: 4px;
-  color: #000000;
-  font-weight: bold;
-  text-decoration: none;
-  font-style: normal;
-  font-variant: small-caps;
-  text-transform: none;
-}
-
-.content {
-  font-family: "Palatino Linotype", "Book Antiqua", Palatino, serif;
-  font-size: 12px;
-  letter-spacing: 3px;
-  word-spacing: 4px;
-  color: #111;
-  font-weight: normal;
-  text-decoration: none;
-  font-style: normal;
-  font-variant: small-caps;
-  text-transform: none;
-}
-
-.top-title{
+.house-content {
+  .top-title {
     font-size: 5rem;
     color: #202020;
     background-color: #2d2d2d;
     letter-spacing: .1em;
-    text-shadow: 
-      -1px -1px 1px #111, 
+    text-shadow:
+      -1px -1px 1px #111,
       2px 2px 1px #363636;
+  }
+
+  .house-info {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: stretch;
+    .house-attribute {
+      display: flex;
+      .title {
+        font-size: 20px;
+        letter-spacing: 3px;
+        word-spacing: 4px;
+        color: #000000;
+        font-weight: bold;
+        text-decoration: none;
+        font-style: normal;
+        font-variant: small-caps;
+        text-transform: none;
+      }
+      .content {
+        font-size: 12px;
+        letter-spacing: 3px;
+        word-spacing: 4px;
+        color: #111;
+        font-weight: normal;
+        text-decoration: none;
+        font-style: normal;
+        font-variant: small-caps;
+        text-transform: none;
+      }
+    }
+  }
+
+  .house-members{
+    .title{
+      font-size: 5rem;
+      color: #202020;
+      background-color: #2d2d2d;
+      letter-spacing: .1em;
+      text-shadow:
+        -1px -1px 1px #111,
+        2px 2px 1px #363636;
+    }
+    .swornMember-container {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: stretch;
+    }
+  }
+
+  .card {
+    width: 30rem;
+    padding: 1rem;
+    margin: 1rem;
+    .card-title {
+      display: flex;
+  
+      & svg {
+        margin-left: 1rem;
+      }
+    }
+  }
+
+
+
+
+
+
+
+
+
+
 }

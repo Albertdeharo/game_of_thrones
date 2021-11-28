@@ -1,0 +1,90 @@
+nav{
+    background-color: red;
+    height: 80px;
+    width: 100%;
+    .logo{
+        color: white;
+        font-size: 35px;
+        line-height: 80px;
+        padding: 0 100px;
+        font-weight: bold;
+    }
+    ul {
+        float: right;
+        margin-right: 20px;
+        li{
+            display: inline-block;
+            line-height: 80px;
+            margin: 0 5px;
+            a {
+                color: white;
+                font-size: 17px;
+                text-transform: uppercase;
+                text-decoration: none;
+                padding: 7px 13px;
+                border-radius: 3px;
+
+                &:hover{
+                    background-color: black;
+                    color: white;
+                    transition: .5s;
+                }
+                &.active{
+                    background-color: black;
+                }
+            }
+        }
+    }
+    .checkbtn{
+        font-size: 30px;
+        color: white;
+        float: right;
+        line-height: 80px;
+        margin-right: 40px;
+        cursor: pointer;
+        display: none;
+    }
+    #check{
+        display: none;
+    }
+    @media (max-width: 952px){
+        .logo{
+            font-size: 30px;
+            padding-left: 50px;
+        }
+        a {
+            font-size: 16px;
+        }
+    }
+    @media (max-width: 858px){
+        .checkbtn{
+            display: block;
+        }
+        ul {
+            position: fixed;
+            width: 100%;
+            height: 100vh;
+            background: green;
+            top: 80px;
+            left: -100%;
+            text-align: center;
+            transition: all .5s;
+            li{
+                display: block;
+                margin: 50px 0px;
+                line-height: 30px;
+                a{
+                    font-size: 20px;
+                    :hover,
+                    .active{
+                        background: none;
+                        color: yellow;
+                    }
+                }
+            }
+        }
+        #check:checked ~ ul{
+            left: 0;
+        }
+    }
+}
