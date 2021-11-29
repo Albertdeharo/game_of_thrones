@@ -1,7 +1,202 @@
-.App {
-  text-align: start;
-}
+.home {
+  background-image: url('./../../assets/wall-background.jpg');
+  background-color: #cccccc;
+  min-height: 87vh;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  text-align: center;
+  .title{
+    padding-top: 5rem;
+    display: flex;
+    font-size: 7rem;
+    color: white;
+    justify-content: center;
+    width: 100%;
+    text-align: center;
+    text-shadow: 2px 2px 5px black;
+  }
+  .shimmer {
+    font-family: "Lato";
+    font-weight: 300;
+    font-size: 3em;
+    margin: 0 auto;
+    margin-bottom: 0;
+  }
+  .shimmer {
+    text-align: center;
+    color: rgba(0,0,0,0.1);
+    background: -webkit-gradient(linear, left top, right top, from(#222), to(#222), color-stop(0.5, #fff));
+    background: -moz-gradient(linear, left top, right top, from(#222), to(#222), color-stop(0.5, #fff));
+    background: gradient(linear, left top, right top, from(#222), to(#222), color-stop(0.5, #fff));
+    -webkit-background-size: 25px 100%;
+    -moz-background-size: 25px 100%;
+    background-size: 25px 100%;
+    -webkit-background-clip: text;
+    -moz-background-clip: text;
+    background-clip: text;
+    -webkit-animation-name: shimmer;
+    -moz-animation-name: shimmer;
+    animation-name: shimmer;
+    -webkit-animation-duration: 5s;
+    -moz-animation-duration: 5s;
+    animation-duration: 10s;
+    -webkit-animation-iteration-count: infinite;
+    -moz-animation-iteration-count: infinite;
+    animation-iteration-count: infinite;
+    background-repeat: no-repeat;
+    background-position: 0 0;
+    background-color: #222;
+  }
+  @-moz-keyframes shimmer {
+    0% {
+      background-position: top left;
+    }
+    100% {
+      background-position: top right;
+    }
+  }
+  @-webkit-keyframes shimmer {
+    0% {
+      background-position: top left;
+    }
+    100% {
+      background-position: top right;
+    }
+  }
+  @-o-keyframes shimmer {
+    0% {
+      background-position: top left;
+    }
+    100% {
+      background-position: top right;
+    }
+  }
+  @keyframes shimmer {
+    0% {
+      background-position: top left;
+    }
+    100% {
+      background-position: top right;
+    }
+  }
 
-.App-link {
-  color: red;
+  .randomhouse{
+    width: 5rem;
+    height: 5rem;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: absolute;
+    &.logo-1{
+      background-image: url('./../../assets/house1.png');
+      top: 20%;
+      left: 80%;
+
+    }
+    &.logo-2{
+      background-image: url('./../../assets/house2.png');
+      top: 20%;
+      left: 10%;
+    }
+    &.logo-3{
+      background-image: url('./../../assets/house3.png');
+      top: 60%;
+      left: 20%;
+    }
+    &.logo-4{
+      background-image: url('./../../assets/house4.png');
+      top: 70%;
+      left: 80%;
+    }
+    &.logo-5{
+      background-image: url('./../../assets/house5.png');
+      top: 60%;
+      left: 60%;
+    }
+    &.logo-6{
+      background-image: url('./../../assets/house6.png');
+
+      top: 80%;
+      left: 40%;
+    }
+  }
+  .wrap{
+    margin-top: 3rem;
+    .button {
+      min-width: 300px;
+      min-height: 60px;
+      font-family: 'Nunito', sans-serif;
+      font-size: 22px;
+      text-transform: uppercase;
+      letter-spacing: 1.3px;
+      font-weight: 700;
+      color: #313133;
+      background: #4FD1C5;
+    background: linear-gradient(90deg, rgba(129,230,217,1) 0%, rgba(79,209,197,1) 100%);
+      border: none;
+      border-radius: 1000px;
+      box-shadow: 12px 12px 24px rgba(79,209,197,.64);
+      transition: all 0.3s ease-in-out 0s;
+      cursor: pointer;
+      outline: none;
+      position: relative;
+      padding: 10px;
+      }
+    
+    button::before {
+    content: '';
+      border-radius: 1000px;
+      min-width: calc(300px + 12px);
+      min-height: calc(60px + 12px);
+      border: 6px solid #00FFCB;
+      box-shadow: 0 0 60px rgba(0,255,203,.64);
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      opacity: 0;
+      transition: all .3s ease-in-out 0s;
+    }
+    
+    .button:hover, .button:focus {
+      color: #313133;
+      transform: translateY(-6px);
+    }
+    
+    button:hover::before, button:focus::before {
+      opacity: 1;
+    }
+    
+    button::after {
+      content: '';
+      width: 30px; height: 30px;
+      border-radius: 100%;
+      border: 6px solid #00FFCB;
+      position: absolute;
+      z-index: -1;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      animation: ring 1.5s infinite;
+    }
+    
+    button:hover::after, button:focus::after {
+      animation: none;
+      display: none;
+    }
+    
+    @keyframes ring {
+      0% {
+        width: 30px;
+        height: 30px;
+        opacity: 1;
+      }
+      100% {
+        width: 300px;
+        height: 300px;
+        opacity: 0;
+      }
+    }
+  }
 }

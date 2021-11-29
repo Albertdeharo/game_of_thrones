@@ -1,9 +1,5 @@
 import React from "react";
 import {
-  BrowserRouter as Router,
-  Routes,
-  Route,
-  Link,
   NavLink
 } from "react-router-dom";
 import { FaUser } from 'react-icons/fa';
@@ -17,7 +13,7 @@ function Navbar(props:any) {
     <label htmlFor="check" className="checkbtn">
       <FaUser/>
     </label>
-    <label className="logo">DesignX</label>
+    <label className="logo">Logo</label>
     <ul>
       <li>
         <NavLink 

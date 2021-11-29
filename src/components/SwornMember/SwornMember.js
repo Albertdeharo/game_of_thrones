@@ -41,7 +41,7 @@ function SwornMember(props:any) {
             </h6>
             <h6 className="card-subtitle mb-2 text-muted">
               {data.gender}
-              {data.gender == 'Male' ? <GiSwordman/>:<GiSwordwoman/>}
+              {data.gender === 'Male' ? <GiSwordman/>:<GiSwordwoman/>}
             </h6>
             <h6 className="card-subtitle mb-2 text-muted">
               {data.born ? <GiNewBorn/>:''}

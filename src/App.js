@@ -18,22 +18,6 @@ function App() {
     <Router>
       <div className="app">
         <Navbar/>
-        {/* <nav>
-          <ul>
-            <li>
-              <Link to="/">home</Link>
-            </li>
-            <li>
-              <Link to="/houses">Houses</Link>
-            </li>
-            <li>
-              <Link to="/contact">Contact</Link>
-            </li>
-          </ul>
-        </nav> */}
-
-        {/* A <Switch> looks through its children <Route>s and
-            renders the first one that matches the current URL. */}
         <Routes>
           <Route path="/" element={<Home />}></Route>
           <Route path="/houses" element={<Houses />}></Route>

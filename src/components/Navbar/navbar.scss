@@ -1,13 +1,12 @@
 nav{
-    background-color: red;
-    height: 80px;
+    background-color: black;
+    height: 13vh;
     width: 100%;
     .logo{
         color: white;
         font-size: 35px;
-        line-height: 80px;
+        line-height: 60px;
         padding: 0 100px;
-        font-weight: bold;
     }
     ul {
         float: right;
@@ -25,12 +24,12 @@ nav{
                 border-radius: 3px;
 
                 &:hover{
-                    background-color: black;
+                    background-color: grey;
                     color: white;
                     transition: .5s;
                 }
                 &.active{
-                    background-color: black;
+                    background-color: grey;
                 }
             }
         }
@@ -64,7 +63,7 @@ nav{
             position: fixed;
             width: 100%;
             height: 100vh;
-            background: green;
+            background: #111;
             top: 80px;
             left: -100%;
             text-align: center;
@@ -73,14 +72,14 @@ nav{
                 display: block;
                 margin: 50px 0px;
                 line-height: 30px;
-                a{
-                    font-size: 20px;
-                    :hover,
-                    .active{
-                        background: none;
-                        color: yellow;
-                    }
-                }
+                // a{
+                //     font-size: 20px;
+                //     :hover,
+                //     .active{
+                //         background: none;
+                //         color: yellow;
+                //     }
+                // }
             }
         }
         #check:checked ~ ul{

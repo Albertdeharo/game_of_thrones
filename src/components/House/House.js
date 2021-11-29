@@ -5,6 +5,7 @@ import Cadet from './../Cadet/Cadet'
 import SwornMember from '../SwornMember/SwornMember'
 import Founder from '../Founder/Founder'
 import Overlord from '../Overlord/Overlord'
+import BackButton from './../Buttons/BackButton/BackButton';
 
 import { FaUser } from 'react-icons/fa';
 import { MdCardMembership } from 'react-icons/md';
@@ -73,6 +74,7 @@ function House() {
       <div className="house-content container">
         {house.name ?
           <div className="col-12">
+            <BackButton/>
             <div className="top-title">{house.name} <GiSwordsEmblem/></div>
           </div>
         :''}
